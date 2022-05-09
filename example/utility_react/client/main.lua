@@ -1,7 +1,7 @@
-RegisterCommand("testreact", function()
-    SendNUIMessage({
-        message = "Works!"
-    })
+RegisterCommand("sendmessage", function(_, args)
+    local message = table.concat(args, " ")
+
+    SendNUIMessage({message = message})
 end)
 
 RegisterCommand("focus", function()
