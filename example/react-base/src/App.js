@@ -1,9 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from 'react';
 
 function App() {
+  const [message, setMessage] = useState("example");
+
   function OnMessage(event) {
-    console.log("Message received: " + event.data.message)
+    if (event.data.message) {
+      console.log("Message received: " + event.data.message)
+      setMessage(event.data.message);
+    }
   }
 
   useEffect(() => {
@@ -17,6 +22,7 @@ function App() {
 
   return (
     <>
+      <div>Message received is: {message}</div>
     </>
   );
 }
