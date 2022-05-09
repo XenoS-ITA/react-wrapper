@@ -18,11 +18,10 @@ function App() {
       window.removeEventListener("message", OnMessage)
     }
   });
-  
 
   return (
     <>
-      <div>Message received is: {message}</div>
+      <div className='text'>Message received is: {message}</div>
     </>
   );
 }
